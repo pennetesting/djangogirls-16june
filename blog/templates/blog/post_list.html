@@ -1,22 +1,20 @@
 <html>
     <head>
-        <title>Penne's Party Plaits LLC</title>
+        <title>Lovely</title>
     </head>
     <body>
         <div>
-            <h1><a href="/">Penne's Party Plaits Portfolio</a></h1>
+            <h1><a href="/">Penne's Great Site</a></h1>
         </div>
         
         <div>
-            <p>published: 19.06.2018, 12:14</p>
-            <h2><a href="">Death Metal Elf</a></h2>
-            <p>For his upcoming nuptules, Sigma sported elf ears, beard braids and lace braids.</p>
-        </div>
-
-        <div>
-            <p>published: 19.06.2018, 12:14</p>
-            <h2><a href="">Elflord</a></h2>
-            <p>Finally realising his true self, Elflord wore elf ears but his hair was too short to braid.</p>
+            {% for post in posts %}
+            <div>
+                <p>created: {{ post.created_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
         </div>
     </body>
 </html>
